@@ -31,6 +31,12 @@ module.exports = {
   devServer: {
     port: port,
     open: true,
+    proxy: {
+      '/admin': {
+        target: 'http://litemall-admin-api:8080',
+        changeOrigin: true,
+      },
+    },
     overlay: {
       warnings: false,
       errors: true
